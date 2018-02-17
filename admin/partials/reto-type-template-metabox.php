@@ -53,9 +53,7 @@
             <label for="solucion">Soluci&oacute;n</label>
         </th>
         <td>
-            <textarea name="solucion" id="solucion">
-                <?php echo @get_post_meta($post->ID, 'solucion', true); ?>
-            </textarea>
+            <?php wp_editor( @get_post_meta($post->ID, 'solucion', true), 'solucion' ); ?>
         </td>
     </tr>
 </table>
