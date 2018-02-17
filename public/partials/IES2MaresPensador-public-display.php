@@ -16,6 +16,7 @@
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <?php
 function IES2MaresPensadorWidgetPublicForm($args, $instance) {
+    if(is_singular( 'reto' )) :
     $title = apply_filters( 'widget_title', $instance['title'] );
 
     // los argumentos before y after del widget son definidos por el tema
@@ -40,5 +41,6 @@ function IES2MaresPensadorWidgetPublicForm($args, $instance) {
         </p>
     </form>
     <?php
+        endif;
 }
 ?>
