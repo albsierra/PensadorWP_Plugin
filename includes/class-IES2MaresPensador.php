@@ -78,6 +78,7 @@ class IES2MaresPensador {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		$this->define_reto_types();
 
 	}
 
@@ -110,6 +111,12 @@ class IES2MaresPensador {
 		 * of the plugin.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-IES2MaresPensador-i18n.php';
+
+        /**
+         * The class responsible for defining new Reto Type
+         * of the plugin.
+         */
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-IES2MaresPensador-reto-type.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
@@ -174,6 +181,17 @@ class IES2MaresPensador {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 	}
+
+    /**
+     * Register Reto Type.
+     *
+     * @since    1.0.0
+     * @access   private
+     */
+    private function define_reto_types() {
+            // Register custom post types
+            $Reto_Type = new IES2MaresPensador_reto_type();
+        }
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
