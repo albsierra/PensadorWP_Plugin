@@ -118,7 +118,12 @@ class IES2MaresPensador {
          */
         require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-IES2MaresPensador-reto-type.php';
 
-		/**
+        /**
+         * La clase responsable de la definición del widget de respuesta.
+         */
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-IES2MaresPensadorWidgetRespuesta.php';
+
+        /**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-IES2MaresPensador-admin.php';
