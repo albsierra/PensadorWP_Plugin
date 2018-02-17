@@ -128,7 +128,12 @@ class IES2MaresPensador {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-IES2MaresPensador-admin.php';
 
-		/**
+        /**
+         * The class responsible for defining shortcode.
+         */
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-IES2MaresPensador-shortcode.php';
+
+        /**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
@@ -168,6 +173,10 @@ class IES2MaresPensador {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+
+        $plugin_shortcode = new IES2MaresPensador_shortcode();
+
+        $this->loader->add_action( 'init', $plugin_shortcode, 'IES2MaresPensador_shortcode_init' );
 
 	}
 
