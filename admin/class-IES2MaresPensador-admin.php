@@ -101,6 +101,7 @@ class IES2MaresPensador_Admin {
 	}
 
     public function IES2MaresPensador_respuesta() {
+        global $wpdb;
         $response = array(
             'error' => false,
         );
@@ -112,9 +113,13 @@ class IES2MaresPensador_Admin {
             'solucion' => htmlspecialchars($_POST['solucion'])
         );
 
-        $respuestas = get_option('IES2MaresPensador_respuestas');
-        $respuestas[] = $respuesta;
-        update_option('IES2MaresPensador_respuestas', $respuestas);
+        $table_name = $wpdb->prefix . IES2MaresPensador::TABLE_NAME;
+
+        $wpdb->insert(
+            $table_name,
+            $respuesta
+        );
+
         $response['message'] = __("Respuesta registrada correctamente");
 
         exit(json_encode($response));

@@ -29,6 +29,8 @@
  */
 class IES2MaresPensador {
 
+    const TABLE_NAME = 'pensador_respuesta';
+
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
