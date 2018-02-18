@@ -174,6 +174,9 @@ class IES2MaresPensador {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
+        $this->loader->add_action( 'wp_ajax_nopriv_IES2MaresPensador_respuesta', $plugin_admin, 'IES2MaresPensador_respuesta' );
+        $this->loader->add_action( 'wp_ajax_IES2MaresPensador_respuesta', $plugin_admin, 'IES2MaresPensador_respuesta' );
+
         $plugin_shortcode = new IES2MaresPensador_shortcode();
 
         $this->loader->add_action( 'init', $plugin_shortcode, 'IES2MaresPensador_shortcode_init' );

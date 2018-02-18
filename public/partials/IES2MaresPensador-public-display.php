@@ -30,6 +30,7 @@ function IES2MaresPensadorWidgetPublicForm($args, $instance) {
     ?>
     <form  class="widget_form_respuesta" action="<?php echo esc_url( admin_url('admin-ajax.php') ); ?>" method="post">
         <input type="hidden" name="action" value="IES2MaresPensador_respuesta">
+        <input type="hidden" name="post_id" value="<?php the_ID() ?>">
         <p>
             <label for="solo-respuesta-nombre"><?php _e('Nombre completo:', 'respuesta-to-comments'); ?>
                 <input type="text" name="nombre" id="solo-respuesta-nombre" size="22" value="" /></label>
@@ -40,6 +41,7 @@ function IES2MaresPensadorWidgetPublicForm($args, $instance) {
             <input type="submit" name="submit" value="<?php _e('Responder', 'respuesta-to-comments'); ?>" />
         </p>
     </form>
+    <p class="message-respuesta"></p>
     <?php
         endif;
 }

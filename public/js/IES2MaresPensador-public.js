@@ -62,6 +62,20 @@
         };
 
         $('.cards').commentCards();
+
+        $('.widget_form_respuesta').on('submit', function (e) {
+            e.preventDefault();
+
+            var $form = $(this);
+
+            $.post($form.attr('action'), $form.serialize(), function (data) {
+                $('.message-respuesta').append(data.message);
+                $('.message-respuesta').css('visibility', 'visible');
+            }, 'json');
+        });
+
+
     });
+
 
 })( jQuery );

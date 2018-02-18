@@ -60,3 +60,7 @@ width: 400px;
     transform: rotate(-1deg) translateX(0%) scale(1);
 }
 
+.message-respuesta {
+    color: limegreen;
+    visibility: hidden;
+}

@@ -100,4 +100,23 @@ class IES2MaresPensador_Admin {
 
 	}
 
+    public function IES2MaresPensador_respuesta() {
+        $response = array(
+            'error' => false,
+        );
+
+        $respuesta = array(
+            'post_id' => $_POST['post_id'],
+            'nombre' => htmlspecialchars($_POST['nombre']),
+            'curso' => htmlspecialchars($_POST['curso']),
+            'solucion' => htmlspecialchars($_POST['solucion'])
+        );
+
+        $respuestas = get_option('IES2MaresPensador_respuestas');
+        $respuestas[] = $respuesta;
+        update_option('IES2MaresPensador_respuestas', $respuestas);
+        $response['message'] = __("Respuesta registrada correctamente");
+
+        exit(json_encode($response));
+    }
 }
