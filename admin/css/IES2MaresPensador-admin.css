@@ -2,3 +2,19 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+ul.respuestasAdmin li{
+    list-style-type: none;
+    background-color: #fcf2ba;
+    border-radius: 25px;
+    border: 5px solid #2a889a;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+ul.respuestasAdmin li p.curso{
+    margin-top: -20px;
+}
+
+ul.respuestasAdmin li p.solucion{
+    margin-left: 20px;
+}
