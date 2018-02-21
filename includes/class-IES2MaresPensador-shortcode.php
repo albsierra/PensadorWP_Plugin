@@ -10,7 +10,7 @@ class IES2MaresPensador_shortcode
 
     public function IES2MaresPensador_shortcode_init()
     {
-        function IES2MaresPensador_shortcode($atts = [], $content = null)
+        function IES2MaresPensador_shortcode($atts = array(), $content = null)
         {
             if(!isset($atts['nretos'])) $atts['nretos'] = 100;
 
