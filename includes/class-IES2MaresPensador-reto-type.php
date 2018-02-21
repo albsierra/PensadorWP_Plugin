@@ -121,6 +121,9 @@ if(!class_exists('IES2MaresPensador_reto_type'))
         {
             // Renderiza el reto metabox
             require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/partials/reto-type-template-metabox.php';
+            require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-IES2MaresPensadorRespuesta.php';
+            
+            IES2MaresPensadorRespuesta::listado($post->ID);
         } // END public function add_inner_meta_boxes($post)
 
     } // END class IES2MaresPensador_reto_type
